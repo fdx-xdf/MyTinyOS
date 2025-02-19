@@ -1,0 +1,1232 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+pid_pool            0x28              build/thread.o
+argv                0x40              build/shell.o
+kbd_buf             0x6c              build/keyboard.o
+root_dir            0x208             build/dir.o
+thread_ready_list   0x10              build/thread.o
+thread_all_list     0x10              build/thread.o
+user_pool           0x2c              build/memory.o
+channel_cnt         0x1               build/ide.o
+cur_part            0x4               build/fs.o
+k_block_descs       0xa8              build/memory.o
+idle_thread         0x4               build/thread.o
+intr_name           0x204             build/interrupt.o
+main_thread         0x4               build/thread.o
+channels            0xcc0             build/ide.o
+ticks               0x4               build/timer.o
+kernel_vaddr        0xc               build/memory.o
+syscall_table       0x80              build/syscall-init.o
+idt_table           0x204             build/interrupt.o
+file_table          0x180             build/file.o
+partition_list      0x10              build/ide.o
+kernel_pool         0x2c              build/memory.o
+pid_lock            0x1c              build/thread.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/init.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/interrupt.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/timer.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/debug.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/string.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/bitmap.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/memory.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/thread.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/list.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/sync.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/console.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/keyboard.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/ioqueue.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/tss.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/process.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/syscall.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/syscall-init.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/stdio.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/stdio-kernel.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/ide.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/fs.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/inode.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/file.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/dir.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/fork.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/shell.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/buildin_cmd.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/exec.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/assert.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/wait_exit.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 build/pipe.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+Address of section .text set to 0xc0001500
+LOAD build/main.o
+LOAD build/init.o
+LOAD build/interrupt.o
+LOAD build/timer.o
+LOAD build/kernel.o
+LOAD build/print.o
+LOAD build/debug.o
+LOAD build/string.o
+LOAD build/bitmap.o
+LOAD build/memory.o
+LOAD build/thread.o
+LOAD build/list.o
+LOAD build/switch.o
+LOAD build/sync.o
+LOAD build/console.o
+LOAD build/keyboard.o
+LOAD build/ioqueue.o
+LOAD build/tss.o
+LOAD build/process.o
+LOAD build/syscall.o
+LOAD build/syscall-init.o
+LOAD build/stdio.o
+LOAD build/stdio-kernel.o
+LOAD build/ide.o
+LOAD build/fs.o
+LOAD build/inode.o
+LOAD build/file.o
+LOAD build/dir.o
+LOAD build/fork.o
+LOAD build/shell.o
+LOAD build/buildin_cmd.o
+LOAD build/exec.o
+LOAD build/assert.o
+LOAD build/wait_exit.o
+LOAD build/pipe.o
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x8048000))
+                0x00000000080480d4                . = (SEGMENT_START ("text-segment", 0x8048000) + SIZEOF_HEADERS)
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn        0x00000000080480d4        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x00000000080480d4        0x0 build/main.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x00000000080480d4        0x0 build/main.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rel.ifunc)
+
+.rel.plt        0x00000000080480d4        0x0
+ *(.rel.plt)
+                [!provide]                        PROVIDE (__rel_iplt_start = .)
+ *(.rel.iplt)
+ .rel.iplt      0x00000000080480d4        0x0 build/main.o
+                [!provide]                        PROVIDE (__rel_iplt_end = .)
+                0x0000000008049000                . = ALIGN (CONSTANT (MAXPAGESIZE))
+
+.init
+ *(SORT_NONE(.init))
+
+.plt            0x0000000008049000        0x0
+ *(.plt)
+ *(.iplt)
+ .iplt          0x0000000008049000        0x0 build/main.o
+
+.plt.got
+ *(.plt.got)
+
+.plt.sec
+ *(.plt.sec)
+
+.text           0x00000000c0001500     0xc3d9
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(SORT_BY_NAME(.text.sorted.*))
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x00000000c0001500      0x158 build/main.o
+                0x00000000c0001500                main
+                0x00000000c00015e9                init
+ .text          0x00000000c0001658       0x4b build/init.o
+                0x00000000c0001658                init_all
+ .text          0x00000000c00016a3      0x47b build/interrupt.o
+                0x00000000c0001a14                intr_get_status
+                0x00000000c0001a37                intr_enable
+                0x00000000c0001a60                intr_disable
+                0x00000000c0001a89                intr_set_status
+                0x00000000c0001aa4                register_handler
+                0x00000000c0001ac0                idt_init
+ .text          0x00000000c0001b1e      0x212 build/timer.o
+                0x00000000c0001c54                timer_init
+                0x00000000c0001cd8                mtime_sleep
+ .text          0x00000000c0001d30      0x55b build/kernel.o
+                0x00000000c0001d30                intr_exit
+                0x00000000c0002267                syscall_handler
+ *fill*         0x00000000c000228b        0x5 
+ .text          0x00000000c0002290      0x1b1 build/print.o
+                0x00000000c0002290                put_str
+                0x00000000c00022ae                put_char
+                0x00000000c000237b                put_int
+                0x00000000c00023de                set_cursor
+                0x00000000c0002402                cls_screen
+ .text          0x00000000c0002441       0xa5 build/debug.o
+                0x00000000c0002441                panic_spin
+ .text          0x00000000c00024e6      0x454 build/string.o
+                0x00000000c00024e6                memset
+                0x00000000c0002542                memcpy
+                0x00000000c00025aa                memcmp
+                0x00000000c0002640                strcpy
+                0x00000000c00026a3                strlen
+                0x00000000c00026fd                strcmp
+                0x00000000c0002784                strchr
+                0x00000000c00027ea                strrchr
+                0x00000000c0002853                strcat
+                0x00000000c00028cd                strchrs
+ .text          0x00000000c000293a      0x1f3 build/bitmap.o
+                0x00000000c000293a                bitmap_init
+                0x00000000c0002961                bitmap_scan_test
+                0x00000000c00029a3                bitmap_scan
+                0x00000000c0002a74                bitmap_set
+ .text          0x00000000c0002b2d     0x1190 build/memory.o
+                0x00000000c0002e73                pde_ptr
+                0x00000000c0002e8f                pte_ptr
+                0x00000000c0002ffa                malloc_page
+                0x00000000c00030c4                get_kernel_pages
+                0x00000000c0003120                get_user_pages
+                0x00000000c0003176                get_a_page
+                0x00000000c0003300                block_desc_init
+                0x00000000c00033a5                sys_malloc
+                0x00000000c00036b5                pfree
+                0x00000000c00037fd                mfree_page
+                0x00000000c00039d2                sys_free
+                0x00000000c0003bd3                mem_init
+                0x00000000c0003c14                addr_v2p
+                0x00000000c0003c42                get_a_page_without_opvaddrbitmap
+ .text          0x00000000c0003cbd      0xce5 build/thread.o
+                0x00000000c0003cd3                running_thread
+                0x00000000c0003d5d                release_pid
+                0x00000000c0003db1                thread_create
+                0x00000000c0003e27                init_thread
+                0x00000000c0003f24                thread_start
+                0x00000000c000409f                schedule
+                0x00000000c000422d                thread_init
+                0x00000000c00042b8                thread_block
+                0x00000000c000431f                thread_unblock
+                0x00000000c000442a                thread_yield
+                0x00000000c00044b0                fork_pid
+                0x00000000c000480f                sys_ps
+                0x00000000c000485c                thread_exit
+                0x00000000c0004963                pid2thread
+ .text          0x00000000c00049a2      0x1e4 build/list.o
+                0x00000000c00049a2                list_init
+                0x00000000c00049cf                list_insert_before
+                0x00000000c0004a10                list_push
+                0x00000000c0004a2d                list_append
+                0x00000000c0004a4a                list_remove
+                0x00000000c0004a80                list_pop
+                0x00000000c0004a9f                elem_find
+                0x00000000c0004ada                list_traversal
+                0x00000000c0004b38                list_len
+                0x00000000c0004b6d                list_empty
+ *fill*         0x00000000c0004b86        0xa 
+ .text          0x00000000c0004b90       0x15 build/switch.o
+                0x00000000c0004b90                switch_to
+ .text          0x00000000c0004ba5      0x347 build/sync.o
+                0x00000000c0004ba5                sema_init
+                0x00000000c0004bca                lock_init
+                0x00000000c0004bfb                sema_down
+                0x00000000c0004d0f                sema_up
+                0x00000000c0004dc5                lock_acquire
+                0x00000000c0004e41                lock_release
+ .text          0x00000000c0004eec       0x9a build/console.o
+                0x00000000c0004eec                console_init
+                0x00000000c0004f00                console_acquire
+                0x00000000c0004f14                console_release
+                0x00000000c0004f28                console_put_str
+                0x00000000c0004f45                console_put_char
+                0x00000000c0004f69                console_put_int
+ .text          0x00000000c0004f86      0x2c4 build/keyboard.o
+                0x00000000c000520a                keyboard_init
+ .text          0x00000000c000524a      0x342 build/ioqueue.o
+                0x00000000c000524a                ioqueue_init
+                0x00000000c00052a7                ioq_full
+                0x00000000c00052f8                ioq_empty
+                0x00000000c00053dd                ioq_getchar
+                0x00000000c000548b                ioq_putchar
+                0x00000000c000553b                ioq_length
+ .text          0x00000000c000558c      0x1ae build/tss.o
+                0x00000000c000558c                update_tss_esp
+                0x00000000c0005607                tss_init
+ .text          0x00000000c000573a      0x367 build/process.o
+                0x00000000c000573a                create_user_vaddr_bitmap
+                0x00000000c000577e                create_page_dir
+                0x00000000c00057ef                start_process
+                0x00000000c00058f5                page_dir_activate
+                0x00000000c0005925                process_activate
+                0x00000000c0005977                process_execute
+ .text          0x00000000c0005aa1      0x319 build/syscall.o
+                0x00000000c0005aa1                getpid
+                0x00000000c0005ab6                write
+                0x00000000c0005ad9                malloc
+                0x00000000c0005af8                free
+                0x00000000c0005b14                fork
+                0x00000000c0005b29                read
+                0x00000000c0005b4c                putchar
+                0x00000000c0005b6f                clear
+                0x00000000c0005b81                getcwd
+                0x00000000c0005ba3                open
+                0x00000000c0005bcc                close
+                0x00000000c0005beb                lseek
+                0x00000000c0005c15                unlink
+                0x00000000c0005c34                mkdir
+                0x00000000c0005c53                opendir
+                0x00000000c0005c72                closedir
+                0x00000000c0005c91                rmdir
+                0x00000000c0005cb0                readdir
+                0x00000000c0005ccf                rewinddir
+                0x00000000c0005ceb                stat
+                0x00000000c0005d0d                chdir
+                0x00000000c0005d2c                ps
+                0x00000000c0005d3e                execv
+                0x00000000c0005d60                exit
+                0x00000000c0005d7c                wait
+                0x00000000c0005d9b                pipe
+ .text          0x00000000c0005dba      0x138 build/syscall-init.o
+                0x00000000c0005dba                sys_getpid
+                0x00000000c0005dce                syscall_init
+ .text          0x00000000c0005ef2      0x2ba build/stdio.o
+                0x00000000c0005f78                vsprintf
+                0x00000000c00060fc                printf
+                0x00000000c0006178                sprintf
+ .text          0x00000000c00061ac       0x62 build/stdio-kernel.o
+                0x00000000c00061ac                printk
+ .text          0x00000000c000620e      0xe01 build/ide.o
+                0x00000000c0006528                ide_read
+                0x00000000c00066ba                ide_write
+                0x00000000c000684c                intr_hd_handler
+                0x00000000c0006e11                ide_init
+ .text          0x00000000c000700f     0x22f2 build/fs.o
+                0x00000000c000773a                filesys_init
+                0x00000000c000792a                path_parse
+                0x00000000c0007987                path_depth_cnt
+                0x00000000c0007caf                sys_open
+                0x00000000c0007f05                fd_local2global
+                0x00000000c0007f58                sys_close
+                0x00000000c0008044                sys_write
+                0x00000000c0008188                sys_read
+                0x00000000c00082cf                sys_lseek
+                0x00000000c00083b7                sys_unlink
+                0x00000000c00085d8                sys_mkdir
+                0x00000000c0008a05                sys_opendir
+                0x00000000c0008b1d                sys_closedir
+                0x00000000c0008b47                sys_readdir
+                0x00000000c0008b84                sys_rewinddir
+                0x00000000c0008b93                sys_rmdir
+                0x00000000c0008f3d                sys_getcwd
+                0x00000000c0009132                sys_chdir
+                0x00000000c00091bd                sys_stat
+                0x00000000c00092e4                sys_putchar
+ .text          0x00000000c0009301      0x80f build/inode.o
+                0x00000000c00093a5                inode_sync
+                0x00000000c0009516                inode_open
+                0x00000000c000966f                inode_close
+                0x00000000c00096e0                inode_init
+                0x00000000c000972f                inode_delete
+                0x00000000c0009891                inode_release
+ .text          0x00000000c0009b10     0x11ce build/file.o
+                0x00000000c0009b10                get_free_slot_in_global
+                0x00000000c0009b60                pcb_fd_install
+                0x00000000c0009bc3                inode_bitmap_alloc
+                0x00000000c0009c11                block_bitmap_alloc
+                0x00000000c0009c6b                bitmap_sync
+                0x00000000c0009cf6                file_create
+                0x00000000c0009fc0                file_open
+                0x00000000c000a0df                file_close
+                0x00000000c000a11e                file_write
+                0x00000000c000a905                file_read
+ .text          0x00000000c000acde      0xf4c build/dir.o
+                0x00000000c000acde                open_root_dir
+                0x00000000c000ad0d                dir_open
+                0x00000000c000ad48                search_dir_entry
+                0x00000000c000af18                dir_close
+                0x00000000c000af44                create_dir_entry
+                0x00000000c000afba                sync_dir_entry
+                0x00000000c000b463                delete_dir_entry
+                0x00000000c000b92a                dir_read
+                0x00000000c000bb36                dir_is_empty
+                0x00000000c000bb61                dir_remove
+ .text          0x00000000c000bc2a      0x56e build/fork.o
+                0x00000000c000c062                sys_fork
+ .text          0x00000000c000c198      0x5d0 build/shell.o
+                0x00000000c000c198                print_prompt
+                0x00000000c000c3ca                my_shell
+ .text          0x00000000c000c768      0x888 build/buildin_cmd.o
+                0x00000000c000c8ec                make_clear_abs_path
+                0x00000000c000c9af                buildin_pwd
+                0x00000000c000ca05                buildin_cd
+                0x00000000c000ca85                buildin_ls
+                0x00000000c000ce19                buildin_ps
+                0x00000000c000ce3a                buildin_clear
+                0x00000000c000ce5b                buildin_mkdir
+                0x00000000c000cee2                buildin_rmdir
+                0x00000000c000cf69                buildin_rm
+ .text          0x00000000c000cff0      0x36e build/exec.o
+                0x00000000c000d2b6                sys_execv
+ .text          0x00000000c000d35e       0x30 build/assert.o
+                0x00000000c000d35e                user_spin
+ .text          0x00000000c000d38e      0x355 build/wait_exit.o
+                0x00000000c000d575                sys_wait
+                0x00000000c000d632                sys_exit
+ .text          0x00000000c000d6e3      0x1f6 build/pipe.o
+                0x00000000c000d6e3                is_pipe
+                0x00000000c000d716                sys_pipe
+                0x00000000c000d7d6                pipe_read
+                0x00000000c000d84e                pipe_write
+ *(.gnu.warning)
+
+.fini
+ *(SORT_NONE(.fini))
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+                0x00000000c000e000                . = ALIGN (CONSTANT (MAXPAGESIZE))
+                0x00000000c000e000                . = SEGMENT_START ("rodata-segment", (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1))))
+
+.rodata         0x00000000c000e000     0x27f4
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00000000c000e000       0xb8 build/main.o
+ .rodata        0x00000000c000e0b8        0xa build/init.o
+ *fill*         0x00000000c000e0c2        0x2 
+ .rodata        0x00000000c000e0c4      0x2cd build/interrupt.o
+ *fill*         0x00000000c000e391        0x3 
+ .rodata        0x00000000c000e394       0x87 build/timer.o
+ .rodata        0x00000000c000e41b       0x3f build/debug.o
+ .rodata        0x00000000c000e45a       0xb9 build/string.o
+ .rodata        0x00000000c000e513       0x3c build/bitmap.o
+ *fill*         0x00000000c000e54f        0x1 
+ .rodata        0x00000000c000e550      0x3c0 build/memory.o
+ .rodata        0x00000000c000e910      0x3ca build/thread.o
+ *fill*         0x00000000c000ecda        0x2 
+ .rodata        0x00000000c000ecdc      0x12f build/sync.o
+ .rodata        0x00000000c000ee0b       0x36 build/keyboard.o
+ *fill*         0x00000000c000ee41        0x3 
+ .rodata        0x00000000c000ee44       0x9d build/ioqueue.o
+ .rodata        0x00000000c000eee1       0x27 build/tss.o
+ .rodata        0x00000000c000ef08       0xdd build/process.o
+ .rodata        0x00000000c000efe5       0x27 build/syscall-init.o
+ .rodata        0x00000000c000f00c      0x1f4 build/ide.o
+ .rodata        0x00000000c000f200      0x89f build/fs.o
+ *fill*         0x00000000c000fa9f        0x1 
+ .rodata        0x00000000c000faa0       0xbb build/inode.o
+ *fill*         0x00000000c000fb5b        0x1 
+ .rodata        0x00000000c000fb5c      0x434 build/file.o
+ .rodata        0x00000000c000ff90      0x203 build/dir.o
+ *fill*         0x00000000c0010193        0x1 
+ .rodata        0x00000000c0010194      0x142 build/fork.o
+ *fill*         0x00000000c00102d6        0x2 
+ .rodata        0x00000000c00102d8      0x197 build/shell.o
+ *fill*         0x00000000c001046f        0x1 
+ .rodata        0x00000000c0010470      0x2fe build/buildin_cmd.o
+ .rodata        0x00000000c001076e        0x8 build/exec.o
+ *fill*         0x00000000c0010776        0x2 
+ .rodata        0x00000000c0010778       0x32 build/assert.o
+ *fill*         0x00000000c00107aa        0x2 
+ .rodata        0x00000000c00107ac       0x48 build/wait_exit.o
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges*)
+                0x00000000c00117f4                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.tdata          0x00000000c00117f4        0x0
+                [!provide]                        PROVIDE (__tdata_start = .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x00000000c00117f4        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x00000000c00117f4        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x00000000c00117f4        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+
+.got            0x00000000c00117f4        0x0
+ *(.got)
+ .got           0x00000000c00117f4        0x0 build/main.o
+ *(.igot)
+                0x00000000c00117f4                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
+
+.got.plt        0x00000000c00117f4        0x0
+ *(.got.plt)
+ .got.plt       0x00000000c00117f4        0x0 build/main.o
+ *(.igot.plt)
+ .igot.plt      0x00000000c00117f4        0x0 build/main.o
+
+.data           0x00000000c0011800      0x15c
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00000000c0011800        0x0 build/main.o
+ .data          0x00000000c0011800        0x0 build/init.o
+ .data          0x00000000c0011800        0x0 build/interrupt.o
+ .data          0x00000000c0011800        0x0 build/timer.o
+ .data          0x00000000c0011800       0xc0 build/kernel.o
+                0x00000000c0011800                intr_entry_table
+ .data          0x00000000c00118c0        0x8 build/print.o
+ .data          0x00000000c00118c8        0x0 build/debug.o
+ .data          0x00000000c00118c8        0x0 build/string.o
+ .data          0x00000000c00118c8        0x0 build/bitmap.o
+ .data          0x00000000c00118c8        0x0 build/memory.o
+ .data          0x00000000c00118c8        0x0 build/thread.o
+ .data          0x00000000c00118c8        0x0 build/list.o
+ .data          0x00000000c00118c8        0x0 build/sync.o
+ .data          0x00000000c00118c8        0x0 build/console.o
+ *fill*         0x00000000c00118c8       0x18 
+ .data          0x00000000c00118e0       0x76 build/keyboard.o
+                0x00000000c00118e0                keymap
+ .data          0x00000000c0011956        0x0 build/ioqueue.o
+ .data          0x00000000c0011956        0x0 build/tss.o
+ .data          0x00000000c0011956        0x0 build/process.o
+ .data          0x00000000c0011956        0x0 build/syscall.o
+ .data          0x00000000c0011956        0x0 build/syscall-init.o
+ .data          0x00000000c0011956        0x0 build/stdio.o
+ .data          0x00000000c0011956        0x0 build/stdio-kernel.o
+ .data          0x00000000c0011956        0x0 build/ide.o
+ .data          0x00000000c0011956        0x0 build/fs.o
+ .data          0x00000000c0011956        0x0 build/inode.o
+ .data          0x00000000c0011956        0x0 build/file.o
+ .data          0x00000000c0011956        0x0 build/dir.o
+ .data          0x00000000c0011956        0x0 build/fork.o
+ *fill*         0x00000000c0011956        0x2 
+ .data          0x00000000c0011958        0x4 build/shell.o
+                0x00000000c0011958                argc
+ .data          0x00000000c001195c        0x0 build/buildin_cmd.o
+ .data          0x00000000c001195c        0x0 build/exec.o
+ .data          0x00000000c001195c        0x0 build/assert.o
+ .data          0x00000000c001195c        0x0 build/wait_exit.o
+ .data          0x00000000c001195c        0x0 build/pipe.o
+
+.data1
+ *(.data1)
+                0x00000000c001195c                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x00000000c001195c                . = .
+                0x00000000c001195c                __bss_start = .
+
+.bss            0x00000000c0011960     0x2000
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00000000c0011960        0x0 build/main.o
+ .bss           0x00000000c0011960        0x0 build/init.o
+ .bss           0x00000000c0011960      0x408 build/interrupt.o
+ .bss           0x00000000c0011d68        0x0 build/timer.o
+ .bss           0x00000000c0011d68        0x0 build/debug.o
+ .bss           0x00000000c0011d68        0x0 build/string.o
+ .bss           0x00000000c0011d68        0x0 build/bitmap.o
+ .bss           0x00000000c0011d68        0x0 build/memory.o
+ *fill*         0x00000000c0011d68       0x18 
+ .bss           0x00000000c0011d80       0x84 build/thread.o
+                0x00000000c0011d80                pid_bitmap_bits
+ .bss           0x00000000c0011e04        0x0 build/list.o
+ .bss           0x00000000c0011e04        0x0 build/sync.o
+ .bss           0x00000000c0011e04       0x1c build/console.o
+ .bss           0x00000000c0011e20       0x14 build/keyboard.o
+                0x00000000c0011e20                ctrl_status
+                0x00000000c0011e24                shift_status
+                0x00000000c0011e28                alt_status
+                0x00000000c0011e2c                caps_lock_status
+                0x00000000c0011e30                ext_scancode
+ .bss           0x00000000c0011e34        0x0 build/ioqueue.o
+ *fill*         0x00000000c0011e34        0xc 
+ .bss           0x00000000c0011e40       0x68 build/tss.o
+ .bss           0x00000000c0011ea8        0x0 build/process.o
+ .bss           0x00000000c0011ea8        0x0 build/syscall.o
+ .bss           0x00000000c0011ea8        0x0 build/syscall-init.o
+ .bss           0x00000000c0011ea8        0x0 build/stdio.o
+ .bss           0x00000000c0011ea8        0x0 build/stdio-kernel.o
+ .bss           0x00000000c0011ea8        0x6 build/ide.o
+                0x00000000c0011ea8                ext_lba_base
+                0x00000000c0011eac                p_no
+                0x00000000c0011ead                l_no
+ .bss           0x00000000c0011eae        0x0 build/fs.o
+ .bss           0x00000000c0011eae        0x0 build/inode.o
+ .bss           0x00000000c0011eae        0x0 build/file.o
+ .bss           0x00000000c0011eae        0x0 build/dir.o
+ .bss           0x00000000c0011eae        0x0 build/fork.o
+ *fill*         0x00000000c0011eae       0x12 
+ .bss           0x00000000c0011ec0      0x2c0 build/shell.o
+                0x00000000c0011ec0                cwd_cache
+                0x00000000c0011f00                final_path
+ .bss           0x00000000c0012180        0x0 build/buildin_cmd.o
+ .bss           0x00000000c0012180        0x0 build/exec.o
+ .bss           0x00000000c0012180        0x0 build/assert.o
+ .bss           0x00000000c0012180        0x0 build/wait_exit.o
+ .bss           0x00000000c0012180        0x0 build/pipe.o
+ *(COMMON)
+ COMMON         0x00000000c0012180      0x424 build/interrupt.o
+                0x00000000c0012180                intr_name
+                0x00000000c00123a0                idt_table
+ COMMON         0x00000000c00125a4        0x4 build/timer.o
+                0x00000000c00125a4                ticks
+ *fill*         0x00000000c00125a8       0x18 
+ COMMON         0x00000000c00125c0      0x12c build/memory.o
+                0x00000000c00125c0                user_pool
+                0x00000000c0012600                k_block_descs
+                0x00000000c00126a8                kernel_vaddr
+                0x00000000c00126c0                kernel_pool
+ *fill*         0x00000000c00126ec       0x14 
+ COMMON         0x00000000c0012700       0x6c build/thread.o
+                0x00000000c0012700                pid_pool
+                0x00000000c0012728                thread_ready_list
+                0x00000000c0012738                thread_all_list
+                0x00000000c0012748                idle_thread
+                0x00000000c001274c                main_thread
+                0x00000000c0012750                pid_lock
+ *fill*         0x00000000c001276c       0x14 
+ COMMON         0x00000000c0012780       0x6c build/keyboard.o
+                0x00000000c0012780                kbd_buf
+ *fill*         0x00000000c00127ec       0x14 
+ COMMON         0x00000000c0012800       0x80 build/syscall-init.o
+                0x00000000c0012800                syscall_table
+ COMMON         0x00000000c0012880      0xcf0 build/ide.o
+                0x00000000c0012880                channel_cnt
+                0x00000000c00128a0                channels
+                0x00000000c0013560                partition_list
+ COMMON         0x00000000c0013570        0x4 build/fs.o
+                0x00000000c0013570                cur_part
+ *fill*         0x00000000c0013574        0xc 
+ COMMON         0x00000000c0013580      0x180 build/file.o
+                0x00000000c0013580                file_table
+ COMMON         0x00000000c0013700      0x208 build/dir.o
+                0x00000000c0013700                root_dir
+ *fill*         0x00000000c0013908       0x18 
+ COMMON         0x00000000c0013920       0x40 build/shell.o
+                0x00000000c0013920                argv
+                0x00000000c0013960                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00000000c0013960                . = ALIGN (0x4)
+                0x00000000c0013960                . = SEGMENT_START ("ldata-segment", .)
+                0x00000000c0013960                . = ALIGN (0x4)
+                0x00000000c0013960                _end = .
+                [!provide]                        PROVIDE (end = .)
+                0x00000000c0013960                . = DATA_SEGMENT_END (.)
+
+.stab           0x0000000000000000      0xbdc
+ *(.stab)
+ .stab          0x0000000000000000      0x36c build/kernel.o
+ .stab          0x000000000000036c      0x7bc build/print.o
+                                        0x7c8 (size before relaxing)
+ .stab          0x0000000000000b28       0xb4 build/switch.o
+                                         0xc0 (size before relaxing)
+
+.stabstr        0x0000000000000000       0x34
+ *(.stabstr)
+ .stabstr       0x0000000000000000       0x34 build/kernel.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x2a
+ *(.comment)
+ .comment       0x0000000000000000       0x2a build/main.o
+                                         0x2b (size before relaxing)
+ .comment       0x000000000000002a       0x2b build/init.o
+ .comment       0x000000000000002a       0x2b build/interrupt.o
+ .comment       0x000000000000002a       0x2b build/timer.o
+ .comment       0x000000000000002a       0x2b build/debug.o
+ .comment       0x000000000000002a       0x2b build/string.o
+ .comment       0x000000000000002a       0x2b build/bitmap.o
+ .comment       0x000000000000002a       0x2b build/memory.o
+ .comment       0x000000000000002a       0x2b build/thread.o
+ .comment       0x000000000000002a       0x2b build/list.o
+ .comment       0x000000000000002a       0x2b build/sync.o
+ .comment       0x000000000000002a       0x2b build/console.o
+ .comment       0x000000000000002a       0x2b build/keyboard.o
+ .comment       0x000000000000002a       0x2b build/ioqueue.o
+ .comment       0x000000000000002a       0x2b build/tss.o
+ .comment       0x000000000000002a       0x2b build/process.o
+ .comment       0x000000000000002a       0x2b build/syscall.o
+ .comment       0x000000000000002a       0x2b build/syscall-init.o
+ .comment       0x000000000000002a       0x2b build/stdio.o
+ .comment       0x000000000000002a       0x2b build/stdio-kernel.o
+ .comment       0x000000000000002a       0x2b build/ide.o
+ .comment       0x000000000000002a       0x2b build/fs.o
+ .comment       0x000000000000002a       0x2b build/inode.o
+ .comment       0x000000000000002a       0x2b build/file.o
+ .comment       0x000000000000002a       0x2b build/dir.o
+ .comment       0x000000000000002a       0x2b build/fork.o
+ .comment       0x000000000000002a       0x2b build/shell.o
+ .comment       0x000000000000002a       0x2b build/buildin_cmd.o
+ .comment       0x000000000000002a       0x2b build/exec.o
+ .comment       0x000000000000002a       0x2b build/assert.o
+ .comment       0x000000000000002a       0x2b build/wait_exit.o
+ .comment       0x000000000000002a       0x2b build/pipe.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x400
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 build/main.o
+ .debug_aranges
+                0x0000000000000020       0x20 build/init.o
+ .debug_aranges
+                0x0000000000000040       0x20 build/interrupt.o
+ .debug_aranges
+                0x0000000000000060       0x20 build/timer.o
+ .debug_aranges
+                0x0000000000000080       0x20 build/debug.o
+ .debug_aranges
+                0x00000000000000a0       0x20 build/string.o
+ .debug_aranges
+                0x00000000000000c0       0x20 build/bitmap.o
+ .debug_aranges
+                0x00000000000000e0       0x20 build/memory.o
+ .debug_aranges
+                0x0000000000000100       0x20 build/thread.o
+ .debug_aranges
+                0x0000000000000120       0x20 build/list.o
+ .debug_aranges
+                0x0000000000000140       0x20 build/sync.o
+ .debug_aranges
+                0x0000000000000160       0x20 build/console.o
+ .debug_aranges
+                0x0000000000000180       0x20 build/keyboard.o
+ .debug_aranges
+                0x00000000000001a0       0x20 build/ioqueue.o
+ .debug_aranges
+                0x00000000000001c0       0x20 build/tss.o
+ .debug_aranges
+                0x00000000000001e0       0x20 build/process.o
+ .debug_aranges
+                0x0000000000000200       0x20 build/syscall.o
+ .debug_aranges
+                0x0000000000000220       0x20 build/syscall-init.o
+ .debug_aranges
+                0x0000000000000240       0x20 build/stdio.o
+ .debug_aranges
+                0x0000000000000260       0x20 build/stdio-kernel.o
+ .debug_aranges
+                0x0000000000000280       0x20 build/ide.o
+ .debug_aranges
+                0x00000000000002a0       0x20 build/fs.o
+ .debug_aranges
+                0x00000000000002c0       0x20 build/inode.o
+ .debug_aranges
+                0x00000000000002e0       0x20 build/file.o
+ .debug_aranges
+                0x0000000000000300       0x20 build/dir.o
+ .debug_aranges
+                0x0000000000000320       0x20 build/fork.o
+ .debug_aranges
+                0x0000000000000340       0x20 build/shell.o
+ .debug_aranges
+                0x0000000000000360       0x20 build/buildin_cmd.o
+ .debug_aranges
+                0x0000000000000380       0x20 build/exec.o
+ .debug_aranges
+                0x00000000000003a0       0x20 build/assert.o
+ .debug_aranges
+                0x00000000000003c0       0x20 build/wait_exit.o
+ .debug_aranges
+                0x00000000000003e0       0x20 build/pipe.o
+
+.debug_pubnames
+                0x0000000000000000      0xfb1
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000       0x24 build/main.o
+ .debug_pubnames
+                0x0000000000000024       0x1f build/init.o
+ .debug_pubnames
+                0x0000000000000043       0x99 build/interrupt.o
+ .debug_pubnames
+                0x00000000000000dc       0x3b build/timer.o
+ .debug_pubnames
+                0x0000000000000117       0x21 build/debug.o
+ .debug_pubnames
+                0x0000000000000138       0x82 build/string.o
+ .debug_pubnames
+                0x00000000000001ba       0x56 build/bitmap.o
+ .debug_pubnames
+                0x0000000000000210      0x13a build/memory.o
+ .debug_pubnames
+                0x000000000000034a      0x169 build/thread.o
+ .debug_pubnames
+                0x00000000000004b3       0xaf build/list.o
+ .debug_pubnames
+                0x0000000000000562       0x6a build/sync.o
+ .debug_pubnames
+                0x00000000000005cc       0x88 build/console.o
+ .debug_pubnames
+                0x0000000000000654       0x91 build/keyboard.o
+ .debug_pubnames
+                0x00000000000006e5       0x6d build/ioqueue.o
+ .debug_pubnames
+                0x0000000000000752       0x32 build/tss.o
+ .debug_pubnames
+                0x0000000000000784       0x94 build/process.o
+ .debug_pubnames
+                0x0000000000000818      0x11c build/syscall.o
+ .debug_pubnames
+                0x0000000000000934       0x44 build/syscall-init.o
+ .debug_pubnames
+                0x0000000000000978       0x36 build/stdio.o
+ .debug_pubnames
+                0x00000000000009ae       0x1d build/stdio-kernel.o
+ .debug_pubnames
+                0x00000000000009cb       0xa1 build/ide.o
+ .debug_pubnames
+                0x0000000000000a6c      0x152 build/fs.o
+ .debug_pubnames
+                0x0000000000000bbe       0x72 build/inode.o
+ .debug_pubnames
+                0x0000000000000c30       0xd8 build/file.o
+ .debug_pubnames
+                0x0000000000000d08       0xcb build/dir.o
+ .debug_pubnames
+                0x0000000000000dd3       0x1f build/fork.o
+ .debug_pubnames
+                0x0000000000000df2       0x5f build/shell.o
+ .debug_pubnames
+                0x0000000000000e51       0xac build/buildin_cmd.o
+ .debug_pubnames
+                0x0000000000000efd       0x20 build/exec.o
+ .debug_pubnames
+                0x0000000000000f1d       0x20 build/assert.o
+ .debug_pubnames
+                0x0000000000000f3d       0x2c build/wait_exit.o
+ .debug_pubnames
+                0x0000000000000f69       0x48 build/pipe.o
+
+.debug_info     0x0000000000000000     0xd25a
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000      0x623 build/main.o
+ .debug_info    0x0000000000000623       0x7d build/init.o
+ .debug_info    0x00000000000006a0      0x3ca build/interrupt.o
+ .debug_info    0x0000000000000a6a      0x49e build/timer.o
+ .debug_info    0x0000000000000f08       0xc8 build/debug.o
+ .debug_info    0x0000000000000fd0      0x485 build/string.o
+ .debug_info    0x0000000000001455      0x217 build/bitmap.o
+ .debug_info    0x000000000000166c      0xdd6 build/memory.o
+ .debug_info    0x0000000000002442      0xb37 build/thread.o
+ .debug_info    0x0000000000002f79      0x35c build/list.o
+ .debug_info    0x00000000000032d5      0x542 build/sync.o
+ .debug_info    0x0000000000003817      0x435 build/console.o
+ .debug_info    0x0000000000003c4c      0x537 build/keyboard.o
+ .debug_info    0x0000000000004183      0x65a build/ioqueue.o
+ .debug_info    0x00000000000047dd      0x5e0 build/tss.o
+ .debug_info    0x0000000000004dbd      0x626 build/process.o
+ .debug_info    0x00000000000053e3      0x8fd build/syscall.o
+ .debug_info    0x0000000000005ce0      0x179 build/syscall-init.o
+ .debug_info    0x0000000000005e59      0x241 build/stdio.o
+ .debug_info    0x000000000000609a       0xdb build/stdio-kernel.o
+ .debug_info    0x0000000000006175      0xda0 build/ide.o
+ .debug_info    0x0000000000006f15     0x17ad build/fs.o
+ .debug_info    0x00000000000086c2      0xaae build/inode.o
+ .debug_info    0x0000000000009170      0xd7b build/file.o
+ .debug_info    0x0000000000009eeb      0xd2f build/dir.o
+ .debug_info    0x000000000000ac1a      0x7dd build/fork.o
+ .debug_info    0x000000000000b3f7      0x34d build/shell.o
+ .debug_info    0x000000000000b744      0x5c9 build/buildin_cmd.o
+ .debug_info    0x000000000000bd0d      0x83e build/exec.o
+ .debug_info    0x000000000000c54b       0xc8 build/assert.o
+ .debug_info    0x000000000000c613      0x5d4 build/wait_exit.o
+ .debug_info    0x000000000000cbe7      0x673 build/pipe.o
+
+.debug_abbrev   0x0000000000000000     0x280b
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x140 build/main.o
+ .debug_abbrev  0x0000000000000140       0x48 build/init.o
+ .debug_abbrev  0x0000000000000188      0x148 build/interrupt.o
+ .debug_abbrev  0x00000000000002d0      0x142 build/timer.o
+ .debug_abbrev  0x0000000000000412       0x60 build/debug.o
+ .debug_abbrev  0x0000000000000472       0xe7 build/string.o
+ .debug_abbrev  0x0000000000000559       0xea build/bitmap.o
+ .debug_abbrev  0x0000000000000643      0x208 build/memory.o
+ .debug_abbrev  0x000000000000084b      0x25a build/thread.o
+ .debug_abbrev  0x0000000000000aa5       0xfc build/list.o
+ .debug_abbrev  0x0000000000000ba1      0x101 build/sync.o
+ .debug_abbrev  0x0000000000000ca2      0x108 build/console.o
+ .debug_abbrev  0x0000000000000daa      0x12f build/keyboard.o
+ .debug_abbrev  0x0000000000000ed9      0x172 build/ioqueue.o
+ .debug_abbrev  0x000000000000104b      0x122 build/tss.o
+ .debug_abbrev  0x000000000000116d      0x13f build/process.o
+ .debug_abbrev  0x00000000000012ac      0x138 build/syscall.o
+ .debug_abbrev  0x00000000000013e4       0xae build/syscall-init.o
+ .debug_abbrev  0x0000000000001492       0xe8 build/stdio.o
+ .debug_abbrev  0x000000000000157a       0xab build/stdio-kernel.o
+ .debug_abbrev  0x0000000000001625      0x210 build/ide.o
+ .debug_abbrev  0x0000000000001835      0x231 build/fs.o
+ .debug_abbrev  0x0000000000001a66      0x16e build/inode.o
+ .debug_abbrev  0x0000000000001bd4      0x1e0 build/file.o
+ .debug_abbrev  0x0000000000001db4      0x1c6 build/dir.o
+ .debug_abbrev  0x0000000000001f7a      0x145 build/fork.o
+ .debug_abbrev  0x00000000000020bf      0x167 build/shell.o
+ .debug_abbrev  0x0000000000002226      0x197 build/buildin_cmd.o
+ .debug_abbrev  0x00000000000023bd      0x151 build/exec.o
+ .debug_abbrev  0x000000000000250e       0x60 build/assert.o
+ .debug_abbrev  0x000000000000256e      0x175 build/wait_exit.o
+ .debug_abbrev  0x00000000000026e3      0x128 build/pipe.o
+
+.debug_line     0x0000000000000000     0x25c7
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000       0xd5 build/main.o
+ .debug_line    0x00000000000000d5       0x4a build/init.o
+ .debug_line    0x000000000000011f       0xfb build/interrupt.o
+ .debug_line    0x000000000000021a       0xcf build/timer.o
+ .debug_line    0x00000000000002e9       0x4b build/debug.o
+ .debug_line    0x0000000000000334       0xbd build/string.o
+ .debug_line    0x00000000000003f1       0x94 build/bitmap.o
+ .debug_line    0x0000000000000485      0x25f build/memory.o
+ .debug_line    0x00000000000006e4      0x1ef build/thread.o
+ .debug_line    0x00000000000008d3       0xb0 build/list.o
+ .debug_line    0x0000000000000983       0xee build/sync.o
+ .debug_line    0x0000000000000a71       0xb6 build/console.o
+ .debug_line    0x0000000000000b27      0x12d build/keyboard.o
+ .debug_line    0x0000000000000c54      0x10b build/ioqueue.o
+ .debug_line    0x0000000000000d5f       0xc4 build/tss.o
+ .debug_line    0x0000000000000e23       0xf6 build/process.o
+ .debug_line    0x0000000000000f19       0xdc build/syscall.o
+ .debug_line    0x0000000000000ff5       0x8d build/syscall-init.o
+ .debug_line    0x0000000000001082       0x9c build/stdio.o
+ .debug_line    0x000000000000111e       0x60 build/stdio-kernel.o
+ .debug_line    0x000000000000117e      0x203 build/ide.o
+ .debug_line    0x0000000000001381      0x452 build/fs.o
+ .debug_line    0x00000000000017d3      0x1a9 build/inode.o
+ .debug_line    0x000000000000197c      0x2ba build/file.o
+ .debug_line    0x0000000000001c36      0x27d build/dir.o
+ .debug_line    0x0000000000001eb3      0x14b build/fork.o
+ .debug_line    0x0000000000001ffe      0x101 build/shell.o
+ .debug_line    0x00000000000020ff      0x17e build/buildin_cmd.o
+ .debug_line    0x000000000000227d      0x104 build/exec.o
+ .debug_line    0x0000000000002381       0x43 build/assert.o
+ .debug_line    0x00000000000023c4      0x106 build/wait_exit.o
+ .debug_line    0x00000000000024ca       0xfd build/pipe.o
+
+.debug_frame    0x0000000000000000     0x1bf0
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x44 build/main.o
+ .debug_frame   0x0000000000000044       0x2c build/init.o
+ .debug_frame   0x0000000000000070      0x13c build/interrupt.o
+ .debug_frame   0x00000000000001ac       0xac build/timer.o
+ .debug_frame   0x0000000000000258       0x2c build/debug.o
+ .debug_frame   0x0000000000000284      0x104 build/string.o
+ .debug_frame   0x0000000000000388       0x84 build/bitmap.o
+ .debug_frame   0x000000000000040c      0x224 build/memory.o
+ .debug_frame   0x0000000000000630      0x224 build/thread.o
+ .debug_frame   0x0000000000000854      0x104 build/list.o
+ .debug_frame   0x0000000000000958       0xac build/sync.o
+ .debug_frame   0x0000000000000a04       0xa4 build/console.o
+ .debug_frame   0x0000000000000aa8       0x5c build/keyboard.o
+ .debug_frame   0x0000000000000b04       0xec build/ioqueue.o
+ .debug_frame   0x0000000000000bf0       0x60 build/tss.o
+ .debug_frame   0x0000000000000c50       0xa4 build/process.o
+ .debug_frame   0x0000000000000cf4      0x2dc build/syscall.o
+ .debug_frame   0x0000000000000fd0       0x44 build/syscall-init.o
+ .debug_frame   0x0000000000001014       0x80 build/stdio.o
+ .debug_frame   0x0000000000001094       0x34 build/stdio-kernel.o
+ .debug_frame   0x00000000000010c8      0x1d4 build/ide.o
+ .debug_frame   0x000000000000129c      0x294 build/fs.o
+ .debug_frame   0x0000000000001530       0xc4 build/inode.o
+ .debug_frame   0x00000000000015f4      0x10c build/file.o
+ .debug_frame   0x0000000000001700      0x11c build/dir.o
+ .debug_frame   0x000000000000181c       0xa8 build/fork.o
+ .debug_frame   0x00000000000018c4       0x74 build/shell.o
+ .debug_frame   0x0000000000001938      0x114 build/buildin_cmd.o
+ .debug_frame   0x0000000000001a4c       0x5c build/exec.o
+ .debug_frame   0x0000000000001aa8       0x2c build/assert.o
+ .debug_frame   0x0000000000001ad4       0xa4 build/wait_exit.o
+ .debug_frame   0x0000000000001b78       0x78 build/pipe.o
+
+.debug_str      0x0000000000000000     0x2426
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x350 build/main.o
+                                        0x3e3 (size before relaxing)
+ .debug_str     0x0000000000000350       0x2f build/init.o
+                                         0xa9 (size before relaxing)
+ .debug_str     0x000000000000037f      0x1be build/interrupt.o
+                                        0x283 (size before relaxing)
+ .debug_str     0x000000000000053d       0xb5 build/timer.o
+                                        0x339 (size before relaxing)
+ .debug_str     0x00000000000005f2       0x2d build/debug.o
+                                         0xc9 (size before relaxing)
+ .debug_str     0x000000000000061f       0x70 build/string.o
+                                        0x12e (size before relaxing)
+ .debug_str     0x000000000000068f       0x76 build/bitmap.o
+                                        0x14f (size before relaxing)
+ .debug_str     0x0000000000000705      0x286 build/memory.o
+                                        0x5d4 (size before relaxing)
+ .debug_str     0x000000000000098b      0x22b build/thread.o
+                                        0x572 (size before relaxing)
+ .debug_str     0x0000000000000bb6       0x96 build/list.o
+                                        0x19e (size before relaxing)
+ .debug_str     0x0000000000000c4c       0x69 build/sync.o
+                                        0x33b (size before relaxing)
+ .debug_str     0x0000000000000cb5       0x86 build/console.o
+                                        0x327 (size before relaxing)
+ .debug_str     0x0000000000000d3b       0xc5 build/keyboard.o
+                                        0x37f (size before relaxing)
+ .debug_str     0x0000000000000e00       0x74 build/ioqueue.o
+                                        0x35a (size before relaxing)
+ .debug_str     0x0000000000000e74       0xea build/tss.o
+                                        0x38c (size before relaxing)
+ .debug_str     0x0000000000000f5e      0x10e build/process.o
+                                        0x40a (size before relaxing)
+ .debug_str     0x000000000000106c      0x183 build/syscall.o
+                                        0x329 (size before relaxing)
+ .debug_str     0x00000000000011ef       0x46 build/syscall-init.o
+                                        0x1f6 (size before relaxing)
+ .debug_str     0x0000000000001235       0x61 build/stdio.o
+                                        0x134 (size before relaxing)
+ .debug_str     0x0000000000001296       0x21 build/stdio-kernel.o
+                                         0xc7 (size before relaxing)
+ .debug_str     0x00000000000012b7      0x218 build/ide.o
+                                        0x5ca (size before relaxing)
+ .debug_str     0x00000000000014cf      0x569 build/fs.o
+                                        0xac6 (size before relaxing)
+ .debug_str     0x0000000000001a38      0x111 build/inode.o
+                                        0x618 (size before relaxing)
+ .debug_str     0x0000000000001b49      0x1a1 build/file.o
+                                        0x7d4 (size before relaxing)
+ .debug_str     0x0000000000001cea      0x119 build/dir.o
+                                        0x6ab (size before relaxing)
+ .debug_str     0x0000000000001e03      0x142 build/fork.o
+                                        0x4d7 (size before relaxing)
+ .debug_str     0x0000000000001f45       0x7a build/shell.o
+                                        0x1b9 (size before relaxing)
+ .debug_str     0x0000000000001fbf       0xfc build/buildin_cmd.o
+                                        0x2cb (size before relaxing)
+ .debug_str     0x00000000000020bb      0x1fc build/exec.o
+                                        0x554 (size before relaxing)
+ .debug_str     0x00000000000022b7       0x1c build/assert.o
+                                         0xcb (size before relaxing)
+ .debug_str     0x00000000000022d3      0x103 build/wait_exit.o
+                                        0x3f9 (size before relaxing)
+ .debug_str     0x00000000000023d6       0x50 build/pipe.o
+                                        0x3a7 (size before relaxing)
+
+.debug_loc      0x0000000000000000     0x2cb0
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x58 build/main.o
+ .debug_loc     0x0000000000000058       0x2c build/init.o
+ .debug_loc     0x0000000000000084      0x210 build/interrupt.o
+ .debug_loc     0x0000000000000294      0x108 build/timer.o
+ .debug_loc     0x000000000000039c       0x2c build/debug.o
+ .debug_loc     0x00000000000003c8      0x1b8 build/string.o
+ .debug_loc     0x0000000000000580       0xb0 build/bitmap.o
+ .debug_loc     0x0000000000000630      0x3c8 build/memory.o
+ .debug_loc     0x00000000000009f8      0x3c8 build/thread.o
+ .debug_loc     0x0000000000000dc0      0x1b8 build/list.o
+ .debug_loc     0x0000000000000f78      0x108 build/sync.o
+ .debug_loc     0x0000000000001080      0x108 build/console.o
+ .debug_loc     0x0000000000001188       0x84 build/keyboard.o
+ .debug_loc     0x000000000000120c      0x18c build/ioqueue.o
+ .debug_loc     0x0000000000001398       0x84 build/tss.o
+ .debug_loc     0x000000000000141c      0x108 build/process.o
+ .debug_loc     0x0000000000001524      0x478 build/syscall.o
+ .debug_loc     0x000000000000199c       0x58 build/syscall-init.o
+ .debug_loc     0x00000000000019f4       0xb0 build/stdio.o
+ .debug_loc     0x0000000000001aa4       0x2c build/stdio-kernel.o
+ .debug_loc     0x0000000000001ad0      0x318 build/ide.o
+ .debug_loc     0x0000000000001de8      0x44c build/fs.o
+ .debug_loc     0x0000000000002234      0x134 build/inode.o
+ .debug_loc     0x0000000000002368      0x1b8 build/file.o
+ .debug_loc     0x0000000000002520      0x1b8 build/dir.o
+ .debug_loc     0x00000000000026d8      0x108 build/fork.o
+ .debug_loc     0x00000000000027e0       0xb0 build/shell.o
+ .debug_loc     0x0000000000002890      0x1b8 build/buildin_cmd.o
+ .debug_loc     0x0000000000002a48       0x84 build/exec.o
+ .debug_loc     0x0000000000002acc       0x2c build/assert.o
+ .debug_loc     0x0000000000002af8      0x108 build/wait_exit.o
+ .debug_loc     0x0000000000002c00       0xb0 build/pipe.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000       0x68
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x30 build/keyboard.o
+ .debug_ranges  0x0000000000000030       0x38 build/dir.o
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_addr
+ *(.debug_addr)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(build/kernel.bin elf32-i386)
